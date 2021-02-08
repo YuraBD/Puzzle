@@ -3,7 +3,7 @@ This module checks if game board is correct.
 
 It has 5 functions:
 
-1) horizontal_check(board: list) -> bool:
+1) horizontal_check
 
 Check if rows have similar numbers
 Return False if have, True otherwise
@@ -17,7 +17,7 @@ True
                       "3   1  **","  8  2***","  2  ****"])
 False
 
-2) hor_to_ver(board: list) -> list:
+2) hor_to_ver
 
 Reverse board. Rows become columns and columns
 become rows
@@ -28,7 +28,7 @@ become rows
 ['****  3  ', '***  6   ', '** 4   82', '*1       ', \
 '  31 81  ', '****93 2*', '****   **', '****5 ***', '**** ****']
 
-3) vertical_check(board: list) -> bool:
+3) vertical_check
 
 Check if columns have similar numbers
 Return False if have, True otherwise
@@ -42,7 +42,7 @@ False
                     "3   5  **","  8  2***","  2  ****"])
 True
 
-4) color_check(board: list) -> bool:
+4) color_check
 
 Check if colors have similar numbers
 Return False if have, True otherwise
@@ -56,7 +56,7 @@ True
                  "3   1  **","  8  2***","  2  ****"])
 False
 
-5) validate_board(board: list) -> list:
+5) validate_board
 
 Check whether board status is compliant with rules.
 Return True if the board status is compliant with the rules,
@@ -160,7 +160,7 @@ def color_check(board: list) -> bool:
     return horizontal_check(colors)
 
 
-def validate_board(board: list) -> list:
+def validate_board(board: list) -> bool:
     '''
     Check whether board status is compliant with rules.
     Return True if the board status is compliant with the rules,
@@ -193,6 +193,3 @@ if __name__ == '__main__':
              "  2  ****"
             ]
     print(validate_board(board))
-
-import doctest
-doctest.testmod()

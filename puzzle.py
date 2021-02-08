@@ -155,7 +155,7 @@ def color_check(board: list) -> bool:
     colors = []
     for i in range(5):
         row = board[8-i][i:]
-        r_row = r_board[i][::-1][i:]
+        r_row = r_board[i][::-1][i+1:]
         colors.append(row+r_row)
     return horizontal_check(colors)
 

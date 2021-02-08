@@ -1,4 +1,6 @@
 '''
+Github: https://github.com/YuraBD/Puzzle
+
 This module checks if game board is correct.
 
 It has 5 functions:

@@ -1,5 +1,83 @@
+'''
+This module checks if game board is correct.
+
+It has 5 functions:
+
+1) horizontal_check(board: list) -> bool:
+
+Check if rows have similar numbers
+Return False if have, True otherwise
+
+>>> horizontal_check(["**** ****","***1 ****","**  3****",\
+                      "* 4 1****","     9 5 "," 6  83  *",\
+                      "3   1  **","  8  2***","  2  ****"])
+True
+>>> horizontal_check(["**** ****","***11****","**  3****",\
+                      "* 4 1****","     9 5 "," 6  83  *",\
+                      "3   1  **","  8  2***","  2  ****"])
+False
+
+2) hor_to_ver(board: list) -> list:
+
+Reverse board. Rows become columns and columns
+become rows
+
+>>> hor_to_ver(["**** ****","***1 ****","**  3****",\
+                "* 4 1****","     9 5 "," 6  83  *",\
+                "3   1  **","  8  2***","  2  ****"])
+['****  3  ', '***  6   ', '** 4   82', '*1       ', \
+'  31 81  ', '****93 2*', '****   **', '****5 ***', '**** ****']
+
+3) vertical_check(board: list) -> bool:
+
+Check if columns have similar numbers
+Return False if have, True otherwise
+
+>>> vertical_check(["**** ****","***1 ****","**  3****",\
+                    "* 4 1****","     9 5 "," 6  83  *",\
+                    "3   1  **","  8  2***","  2  ****"])
+False
+>>> vertical_check(["**** ****","***1 ****","**  3****",\
+                    "* 4 1****","     9 5 "," 6  83  *",\
+                    "3   5  **","  8  2***","  2  ****"])
+True
+
+4) color_check(board: list) -> bool:
+
+Check if colors have similar numbers
+Return False if have, True otherwise
+
+>>> color_check(["**** ****","***1 ****","**  3****",\
+                 "* 4 1****","     9 5 "," 6  83  *",\
+                 "3   1  **","  8  2***","  2  ****"])
+True
+>>> color_check(["**** ****","***1 ****","**  3****",\
+                 "* 4 1****"," 2   9 5 "," 6  83  *",\
+                 "3   1  **","  8  2***","  2  ****"])
+False
+
+5) validate_board(board: list) -> list:
+
+Check whether board status is compliant with rules.
+Return True if the board status is compliant with the rules,
+False otherwise.
+
+>>> validate_board(["**** ****","***1 ****","**  3****",\
+                    "* 4 1****","     9 5 "," 6  83  *",\
+                    "3   5  **","  8  2***","  2  ****"])
+True
+>>> validate_board(["**** ****","***1 ****","**  3****",\
+                    "* 4 1****"," 2   9 5 "," 6  83  *",\
+                    "3   1  **","  8  2***","  2  ****"])
+False
+'''
+
+
 def horizontal_check(board: list) -> bool:
     '''
+    Check if rows have similar numbers
+    Return False if have, True otherwise
+
     >>> horizontal_check(["**** ****","***1 ****","**  3****",\
                           "* 4 1****","     9 5 "," 6  83  *",\
                           "3   1  **","  8  2***","  2  ****"])
@@ -21,6 +99,16 @@ def horizontal_check(board: list) -> bool:
 
 
 def hor_to_ver(board: list) -> list:
+    '''
+    Reverse board. Rows become columns and columns
+     become rows
+    
+    >>> hor_to_ver(["**** ****","***1 ****","**  3****",\
+                     "* 4 1****","     9 5 "," 6  83  *",\
+                     "3   1  **","  8  2***","  2  ****"])
+    ['****  3  ', '***  6   ', '** 4   82', '*1       ', \
+'  31 81  ', '****93 2*', '****   **', '****5 ***', '**** ****']
+    '''
     r_board = []
     for i in range(len(board)):
         row = []
@@ -33,6 +121,9 @@ def hor_to_ver(board: list) -> list:
 
 def vertical_check(board: list) -> bool:
     '''
+    Check if columns have similar numbers
+    Return False if have, True otherwise
+
     >>> vertical_check(["**** ****","***1 ****","**  3****",\
                         "* 4 1****","     9 5 "," 6  83  *",\
                         "3   1  **","  8  2***","  2  ****"])
@@ -48,6 +139,9 @@ def vertical_check(board: list) -> bool:
 
 def color_check(board: list) -> bool:
     '''
+    Check if colors have similar numbers
+    Return False if have, True otherwise
+
     >>> color_check(["**** ****","***1 ****","**  3****",\
                      "* 4 1****","     9 5 "," 6  83  *",\
                      "3   1  **","  8  2***","  2  ****"])
@@ -68,6 +162,10 @@ def color_check(board: list) -> bool:
 
 def validate_board(board: list) -> list:
     '''
+    Check whether board status is compliant with rules.
+    Return True if the board status is compliant with the rules,
+    False otherwise.
+
     >>> validate_board(["**** ****","***1 ****","**  3****",\
                         "* 4 1****","     9 5 "," 6  83  *",\
                         "3   5  **","  8  2***","  2  ****"])
@@ -95,3 +193,6 @@ if __name__ == '__main__':
              "  2  ****"
             ]
     print(validate_board(board))
+
+import doctest
+doctest.testmod()

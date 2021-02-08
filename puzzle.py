@@ -102,7 +102,7 @@ def hor_to_ver(board: list) -> list:
     '''
     Reverse board. Rows become columns and columns
      become rows
-    
+
     >>> hor_to_ver(["**** ****","***1 ****","**  3****",\
                      "* 4 1****","     9 5 "," 6  83  *",\
                      "3   1  **","  8  2***","  2  ****"])
@@ -181,7 +181,7 @@ def validate_board(board: list) -> bool:
 
 
 if __name__ == '__main__':
-    board = [
+    game_board = [
              "**** ****",
              "***1 ****",
              "**  3****",
@@ -192,4 +192,4 @@ if __name__ == '__main__':
              "  8  2***",
              "  2  ****"
             ]
-    print(validate_board(board))
+    print(validate_board(game_board))
